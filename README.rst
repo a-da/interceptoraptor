@@ -16,7 +16,7 @@ We could address this in a few steps:
     Transport intercepted data to your IDE environment.
 
 3. Replay:
-    Replay captured info from data environment into your IDE environment.
+    Replay captured from data environment into your IDE environment.
 
 4. Repeat "Replay" step until you find a solution to the problem.
 

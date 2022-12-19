@@ -7,7 +7,7 @@ Install, easy, pure python lib.
 
 Given we have Star Wars API use-case (swapi.py) for: 1-Record, 2-Fetch and 3-Replay.
 
-Our Star Wars API - swapi.py
+We have Our Star Wars API - swapi.py
 
 .. code-block:: python
 
@@ -20,7 +20,7 @@ Our Star Wars API - swapi.py
         response = requests.get(url + people_id)
         return response.json()
 
-Our Star Wars API - sw_run.py
+To run Star Wars API - sw_run.py
 
 .. code-block:: python
 
@@ -39,7 +39,7 @@ Our Star Wars API - sw_run.py
         main()
 
 
-We execute sw_run.py on HOT env with interceptoraptor in two modes:
+We execute sw_run.py on HOT env with interceptoraptor in one of two modes:
 
 1. Module mode
 2. Command line mode
@@ -81,16 +81,13 @@ mock.py
 
 .. code-block:: bash
 
+    # 1-Record
     $ intercept.swapi.py
     INTERCEPT read from EXTERNAL GET:'https://swapi.dev/api/people/' '005ef4923dae85fa7b54d957a2ab70cc.json'
     INTERCEPT read from EXTERNAL GET:'https://swapi.dev/api/people/' '1ab0697ae6d92e14fa83f65aab774dc5.json'
     INTERCEPT read from EXTERNAL GET:'https://swapi.dev/api/people/' 'aa71300179f110d8de00d2d554a98e18.json'
 
-
-We will see message like
-
-
-We transfer 'test_swapi_dev.db' to IDE env to replay.
+2-Fetch - We transfer 'test_swapi_dev.db' to IDE env to replay.
 
     .. code-block:: python
 
@@ -99,9 +96,11 @@ We transfer 'test_swapi_dev.db' to IDE env to replay.
     mock.storage.read_only = True
     ...
 
+3-Replay: EXTERNAL will be INTERNAL now
 
 .. code-block::
 
+    $ intercept.swapi.py
     INTERCEPT read from INTERNAL GET:'https://swapi.dev/api/people/' '005ef4923dae85fa7b54d957a2ab70cc.json'
     INTERCEPT read from INTERNAL GET:'https://swapi.dev/api/people/' '1ab0697ae6d92e14fa83f65aab774dc5.json'
     INTERCEPT read from INTERNAL GET:'https://swapi.dev/api/people/' 'aa71300179f110d8de00d2d554a98e18.json'

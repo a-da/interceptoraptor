@@ -16,7 +16,7 @@ def function_with_parameters(parameters: Dict[str, Any]) -> Dict[str, Any]:
     """
     new = copy.deepcopy(parameters)
     del parameters
-    new.pop('max_retries', None)  # TODO
+    new.pop('max_retries', None)  # TO-DO
 
     json_field = new.get('json')
     if json_field:
@@ -37,7 +37,7 @@ def test_single_intercept():
 
     storage = Sqlite3(path)
 
-    @single_intercept(storage=storage, prepare_parameters=a_function_with_parameters)
+    @single_intercept(storage=storage, prepare_parameters=function_with_parameters)
     def a(url, method, z):
         return url + method + z
 
@@ -67,7 +67,7 @@ def test_intercept():
     intercept(
         target_call=dummy_module3.a,
         storage=storage,
-        prepare_parameters=space_lib
+        prepare_parameters=function_with_parameters
     )
 
     dummy_module1.a('1', '2', z='3')

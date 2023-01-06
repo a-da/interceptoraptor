@@ -2,10 +2,8 @@
 Interceptoraptor - Intercept and Terminate your data problem.
 =============================================================
 
-You re welcome to use this tool
-in case you have a bug in as "hot" environment (prod, pre-prod,...) which
-can not be reproduced in your local IDE environment due to chains of many external requests dependencies
-(db, http, ...).
+You're welcome to use this tool in case you have a bug in as "hot" environment (prod, pre-prod, ...)
+which can not be reproduced in your local IDE environment due to chains of many external requests dependencies (db, HTTP, ...).
 
 We could address this in a few steps:
 

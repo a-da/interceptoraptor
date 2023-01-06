@@ -19,10 +19,10 @@ class AbstractStorage:
         self.read_only = False
 
     def __enter__(self) -> 'AbstractStorage':
-        pass
+        raise NotImplementedError
 
     def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
-        pass
+        raise NotImplementedError
 
     def __setitem__(self, key: str, value: bytes) -> None:
         if self.read_only:
@@ -30,10 +30,10 @@ class AbstractStorage:
                                  f"cannot write new data: {key=}: {value=}")
 
     def __getitem__(self, key: str) -> bytes:
-        pass
+        raise NotImplementedError
 
     def __contains__(self, key: str) -> bool:
-        pass
+        raise NotImplementedError
 
     def exists(self) -> bool:
-        pass
+        raise NotImplementedError

@@ -7,7 +7,7 @@ It just do not work for us:
     Its log too much or nothing, there is not truncate the logs.
 
 2. Multi-threading/parallel
-    Just does not work. In "interceptorator" we make sure about this by storing into threadsafe storage env 'sqllite'.
+    Just does not work. In "interceptorator" we make sure about this by storing into threadsafe storage env 'sqlite'.
 
 3. A blotted yaml dump
     It takes time to load entire yaml if is too big. There is no option to extract just one item.

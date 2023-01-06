@@ -153,4 +153,4 @@ def intercept(
         module = sys.modules[key]
         for k, v in dict(module.__dict__).items():
             if v is target_call:
-                setattr(module, k, intercepted_target_call)  # TODO: try to mock.patch
+                setattr(module, k, intercepted_target_call)  # TO-DO: try to mock.patch

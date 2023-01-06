@@ -1,7 +1,7 @@
 import sqlite3
 import threading
 from pathlib import Path
-from typing import Any, cast
+from typing import Any, cast, Iterator
 from contextlib import contextmanager
 
 from . import AbstractStorage
@@ -12,7 +12,7 @@ lock = threading.Lock()
 
 class Sqlite3(AbstractStorage):
     @contextmanager
-    def _safe(self):
+    def _safe(self) -> Iterator[None]:
         with lock:
             self._connection = sqlite3.connect(self._path, check_same_thread=True)
             self._cursor = self._connection.cursor()
